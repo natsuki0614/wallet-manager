@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Wallet Manager</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <header>
+            <a href="/" class="header-logo">WALLET MANAGER</a>
+            <div class="today">
+                <% let today = new Date() %>
+                <% let yyyy = today.getFullYear(); %>
+                <% let m = today.getMonth() + 1; %>
+                <% let d = today.getDate(); %>
+                <span><%= yyyy + '年' + m + '月' + d + '日' %></span>
+            </div>
+        </header>
+        <div class="container">
+            <div class="container-header">
+                <div class="container-text">
+                    <h2>支出リスト</h2>
+                    <h1><% if(spendings[0] == undefined){ %>
+                            <%= "今月の支出は" %>
+                        <% }else{ %>
+                            <% let cpDate = spendings[0].date %>
+                            <% let cpYear = cpDate.getFullYear(); %>
+                            <% let cpMonth = cpDate.getMonth()+1; %>
+                            <% let cpDay = cpDate.getDate(); %>
+                            <% if((cpMonth == m-1)){ %>
+                                <%= "先月の支出は" %>
+                            <% }else{ %>
+                                <%= "今月の支出は" %>
+                            <% } %>
+                        <% } %>
+                        <span class="sum">
+                            <%= Number(sum).toLocaleString() %>
+                          </span>    
+                        円です
+                    </h1>
+                </div>
+                <a href="/new" class="new-button">+ 新規登録</a>
+            </div>
+            <div class="scroll-table">
+                <table class="index-table-wrapper" border="1">
+                    <tr class="table-head">
+                        <th width="15%">年月日</th>
+                        <th width="10%">項目</th>
+                        <th width="25%">内容</th>
+                        <th width="15%">金額</th>
+                        <th width="15%">名前</th>
+                        <th width="10%">立替え</th>
+                        <th width="10%">  </th>
+                    </tr>
+                    <% spendings.forEach((spending) => { %>  
+                        <tr class="table-body" align="center">
+                            <% let spDate = spending.date %>
+                            <% let spYear = spDate.getFullYear(); %>
+                            <% let spMonth = spDate.getMonth() + 1; %>
+                            <% let spDay = spDate.getDate(); %>
+                            <td width="15%"><%= spYear + '年' + spMonth + '月' + spDay + '日' %></td>
+                            <td width="10%"><%= spending.category %></td>
+                            <td width="25%"><%= spending.detail %></td>
+                            <td width="15%"><%= spending.price.toLocaleString() + '円' %></td>
+                            <td width="15%"><%= spending.name %></td>
+                            <td width="10%"><%= spending.payment %></td>
+                            <td width="10%" class="record-menu">
+                            <% if(spendings[0] == undefined){ %>
+                                <form action="/delete/<%= spending.id %>" method="post">
+                                    <input type="submit" value="削除">
+                                </form>
+                            <% }else{ %>
+                                <% let cpDate = spendings[0].date %>
+                                <% let cpYear = cpDate.getFullYear(); %>
+                                <% let cpMonth = cpDate.getMonth()+1; %>
+                                <% let cpDay = cpDate.getDate(); %>
+                                <% if((cpMonth == m-1)){ %>
+                                    <form action="/lm-delete/<%= spending.id %>" method="post">
+                                        <input type="submit" value="削除">
+                                    </form>
+                                <% }else{ %>
+                                    <form action="/delete/<%= spending.id %>" method="post">
+                                        <input type="submit" value="削除">
+                                    </form>
+                                <% } %>
+                            <% } %>
+                                <a href="/edit/<%= spending.id %>">編集</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </table>
+            </div>    
+            <div class="container-footer">
+                <% if(spendings[0] == undefined){ %>
+                    <a href="/last-month">先月の支出リスト</a>
+                <% }else{ %>
+                    <% let cpDate = spendings[0].date %>
+                    <% let cpYear = cpDate.getFullYear(); %>
+                    <% let cpMonth = cpDate.getMonth()+1; %>
+                    <% let cpDay = cpDate.getDate(); %>
+                    <% if(cpMonth == m-1){ %>
+                        <a href="/index">今月の支出リスト</a>
+                    <% }else{ %>
+                        <a href="/last-month">先月の支出リスト</a>
+                    <% } %>
+                <% } %>
+                <a  href="/members">メンバーリスト</a>
+
+            </div>
+        </div>
+    </body>
+</html>

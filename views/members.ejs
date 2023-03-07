@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Wallet Manager</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <header>
+            <a href="/" class="header-logo">WALLET MANAGER</a>
+            <div class="today">
+                <% let today = new Date() %>
+                <% let yyyy = today.getFullYear(); %>
+                <% let m = today.getMonth() + 1; %>
+                <% let d = today.getDate(); %>
+                <span><%= yyyy + '年' + m + '月' + d + '日' %></span>
+            </div>
+        </header>
+        <div class="container">
+            <div class="container-header">
+                <div class="container-text">
+                    <h2>メンバーリスト</h2>
+                </div>
+                <a href="/member-new" class="new-button">+ メンバー追加</a>
+            </div>
+            <div class="scroll-table">
+                <table class="index-table-wrapper" border="1">
+                    <tr class="table-head">
+                        <th width="15%">名前</th>
+                        <th width="20%">毎月の基本支払い額</th>
+                        <th width="65%">  </th>
+                    </tr>
+                    <% members.forEach((member) => { %>   
+                        <tr class="table-body" align="center">
+                            <td width="15%"><%= member.name %></td>
+                            <td width="20%"><%= member.monthly.toLocaleString() + '円' %></td>
+                            <td width="65%" class="record-menu">
+                                <a href="/personal/<%= member.id %>">今月の支払い額</a>
+                                <a href="/lm-personal/<%= member.id %>">先月の支払い額</a>
+                                <form action="/member-delete/<%= member.id %>" method="post">
+                                    <input type="submit" value="削除">
+                                </form>
+                                <a href="/member-edit/<%= member.id %>">編集</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </table>
+            </div>
+            <div class="container-footer">
+                <a href="/index">今月の支出リスト</a>
+            </div>
+        </div>
+    </body>
+</html>
