@@ -7,8 +7,8 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
+  host: 'natsuki-mysql1.cx9dlzdjkaqv.ap-northeast-1.rds.amazonaws.com',
+  user: 'admin',
   password: 'bsax0203',
   database: 'wallet_manager',
 });
