@@ -414,7 +414,6 @@ header{
     }
 
     .calc{
-        /* 電卓のサイズ */
         width: 300px;
         height: 400px;
         padding: 2px;
@@ -422,16 +421,15 @@ header{
     }
     
     .calc-wrapper button {
-        /* ボタンのサイズ */
         width: 60px;
         height: 70px;
         margin: 2px;
     }
     
-    /* ディスプレイの詳細設定 */
     .calc-wrapper .display input{
         width: 200px;
     }
     
     
 }
+
