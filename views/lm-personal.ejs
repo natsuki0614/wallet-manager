@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Wallet Manager</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <%- include('header'); %>
+        <div class="container">
+            <div class="container-text">
+                <div class="flex">
+                    <h2><%= member[0].name %>のリスト</h2>
+                </div>
+                <% const spendingSum = member[0].monthly - sub + Number(add) %>
+                <h1>
+                    先月の支出合計は <%= spendingSum.toLocaleString() %>円 です
+                </h1>
+            </div> 
+            <div class="personal-info">
+                <h2>毎月の基本支払い額 <%= Number(member[0].monthly).toLocaleString() %>円</h2>
+                <h2>追加支払い額 <%= Number(add).toLocaleString() %>円</h2>
+                <table class="index-table-wrapper" border="1">
+                    <tr class="table-head">
+                        <th width="15%">年月日</th>
+                        <th width="15%">項目</th>
+                        <th width="25%">内容</th>
+                        <th width="20%">金額</th>
+                        <th width="15%">名前</th>
+                        <th width="10%">立替え</th>
+                    </tr>
+                    <% addSpendings.forEach((addSpending) => { %>   
+                        <tr class="table-body" align="center">
+                            <% let addDate = addSpending.date %>
+                            <% let addYear = addDate.getFullYear(); %>
+                            <% let addMonth = addDate.getMonth() + 1; %>
+                            <% let addDay = addDate.getDate(); %>
+                            <td width="15%"><%= addYear + '年' + addMonth + '月' + addDay + '日' %></td>
+                            <td width="15%"><%= addSpending.category %></td>
+                            <td width="25%"><%= addSpending.detail %></td>
+                            <td width="20%"><%= addSpending.price.toLocaleString() + '円' %></td>
+                            <td width="15%"><%= addSpending.name %></td>
+                            <td width="10%"><%= addSpending.payment %></td>
+                        </tr>
+                    <% }) %>
+                </table>
+                <h2>立て替えた額 <%= Number(sub).toLocaleString() %>円</h2>
+                <table class="index-table-wrapper" border="1">
+                    <tr class="table-head">
+                        <th width="15%">年月日</th>
+                        <th width="15%">項目</th>
+                        <th width="25%">内容</th>
+                        <th width="20%">金額</th>
+                        <th width="15%">名前</th>
+                        <th width="10%">立替え</th>
+                    </tr>
+                    <% subSpendings.forEach((subSpending) => { %>   
+                        <tr class="table-body" align="center">
+                            <% let subDate = subSpending.date %>
+                            <% let subYear = subDate.getFullYear(); %>
+                            <% let subMonth = subDate.getMonth() + 1; %>
+                            <% let subDay = subDate.getDate(); %>
+                            <td width="15%"><%= subYear + '年' + subMonth + '月' + subDay + '日' %></td>
+                            <td width="15%"><%= subSpending.category %></td>
+                            <td width="25%"><%= subSpending.detail %></td>
+                            <td width="20%"><%= subSpending.price.toLocaleString() + '円' %></td>
+                            <td width="15%"><%= subSpending.name %></td>
+                            <td width="10%"><%= subSpending.payment %></td>
+                        </tr>
+                    <% }) %>
+                </table>
+            </div> 
+            <div class="container-footer">
+                <a href="/members">メンバーリストに戻る</a>
+                <a href="/last-month">先月の支出一覧に戻る</a>
+            </div>  
+        </div>
+    </body>
+</html>

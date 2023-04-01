@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Wallet Manager</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <%- include('header'); %>
+        <div class="container">
+            <div class="container-header">
+                <div class="container-text">
+                    <h2>メンバー追加</h2>
+                </div>
+                <a href="/members" class="cancel-button">キャンセル</a>
+            </div>
+            <div class="record-form-wrapper">
+                <form action="/member-create" method="post">
+                    <p class="form-label">名前</p>
+                    <input name="memberName" type="text">
+                    <p class="form-label">毎月の支払い額</p>
+                    <input name="memberMonthly" type="number">
+                    <input type="submit" value="追加する">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

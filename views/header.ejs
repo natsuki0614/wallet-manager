@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Wallet Manager</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        
+    <body>
+        <header>
+            <a href="/" class="header-logo">WALLET MANAGER</a>
+            
+            <ul class="today">
+                <% let today = new Date() %>
+                <% let yyyy = today.getFullYear(); %>
+                <% let m = today.getMonth() + 1; %>
+                <% let d = today.getDate(); %>
+                <li><%= yyyy + '年' + m + '月' + d + '日' %></li>
+                <li>ユーザー名：<%= locals.username %></li>
+                <li><a class="logout" href="/logout">ログアウト</a></li>
+            </ul>
+        </header>
+    </body>
+
+</html>
