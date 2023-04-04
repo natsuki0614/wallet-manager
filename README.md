@@ -1,5 +1,4 @@
 # wallet-manager
-
 URL https://wallet-manager.net
 
 ## 概要
@@ -57,6 +56,7 @@ URL https://wallet-manager.net
 4. 精算額ページを確認
 
 ## AWSネットワーク構成図
+![AWS構成図](https://user-images.githubusercontent.com/127094319/229760414-1256be1b-dc0a-4b17-ba6f-040ba56f516a.png)
 ## ER図
 ## 使用技術
 - HTML/CSS
