@@ -1,6 +1,6 @@
 # wallet-manager
-URL https://wallet-manager.net
-
+**URL https://wallet-manager.net**
+![トップ画面](https://user-images.githubusercontent.com/127094319/229761403-d53dc8a1-0e34-451c-b97f-56ab17e54877.png)
 ## 概要
 
 **「wallet-manager」**
