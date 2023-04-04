@@ -68,7 +68,7 @@ router
             `UPDATE members 
              SET name = ?, monthly = ? 
              WHERE id = ?
-             AND userId = ?`,
+             AND user_id = ?`,
             [req.body.memberName,req.body.memberMonthly,req.params.id,userId],
         );
         res.redirect('/members');
