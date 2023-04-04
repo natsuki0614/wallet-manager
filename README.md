@@ -51,9 +51,23 @@
 （例）複数人で旅行に行った際、宿泊代、交通費、食事代を誰かが立て替えて、後日精算するとき
 
 1. メンバー名のみ登録
+![例1](https://user-images.githubusercontent.com/127094319/229766814-6510f357-2889-4663-8349-21387a94a00f.png)
+
 2. 支出リスト作成
+![例2](https://user-images.githubusercontent.com/127094319/229766847-f5ef1954-1530-4ea0-ab51-155f96c0b47b.png)
+
 3. 合計金額を割り勘して負担額を算出し、メンバーごとに登録
+![例3](https://user-images.githubusercontent.com/127094319/229766877-1d418ebf-d8d4-4790-bb68-b16ac59862df.png)
+
 4. 精算額ページを確認
+<p>
+<img src="https://user-images.githubusercontent.com/127094319/229766908-0980b90e-2f0f-4120-820c-a25f4113184c.png" width="500">
+<img src="https://user-images.githubusercontent.com/127094319/229766928-b6a35226-d42b-4c9b-82f9-b34dd70e15ad.png" width="500">
+</p>
+<p>
+<img src="https://user-images.githubusercontent.com/127094319/229766948-e040970f-adc0-48fb-a402-3bd4a0864094.png" width="500">
+<img src="https://user-images.githubusercontent.com/127094319/229766999-b44494c2-4673-4696-9ce4-7b74353ecbf2.png" width="500">
+</p>
 
 ## AWSネットワーク構成図
 ![AWS構成図](https://user-images.githubusercontent.com/127094319/229760414-1256be1b-dc0a-4b17-ba6f-040ba56f516a.png)
