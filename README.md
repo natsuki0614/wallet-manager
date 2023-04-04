@@ -58,6 +58,7 @@ URL https://wallet-manager.net
 ## AWSネットワーク構成図
 ![AWS構成図](https://user-images.githubusercontent.com/127094319/229760414-1256be1b-dc0a-4b17-ba6f-040ba56f516a.png)
 ## ER図
+![ER図](https://user-images.githubusercontent.com/127094319/229761062-2bab6396-f2e4-424a-8566-778d83166208.png)
 ## 使用技術
 - HTML/CSS
 - javascript
