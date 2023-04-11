@@ -10,8 +10,8 @@ html{
 }
 
 body{
-    background-color: #e6effa;
-    color: #59626f;
+    background-color: #ecebeb;
+    color: #565656;
 }
 
 img{
@@ -107,7 +107,7 @@ input[type="submit"] {
   
   .sign .panel {
     padding: 30px 80px;
-    background-color: #F6FAFF;
+    background-color: #ffffff;
   }
   
   .sign h1 {
@@ -121,7 +121,7 @@ input[type="submit"] {
   }
   
   .sign h1 > a:hover {
-    color: #2b6d90;
+    color: #d28f58;
   }
   
   .sign h2 {
@@ -202,7 +202,7 @@ input[type="submit"] {
 header{
     height: 80px;
     width: 100%;
-    background-color: #ffffff;
+    background-color: #363535;
     border-bottom: 1px solid #f0f4f9;
     display: flex;
     justify-content: space-between;
@@ -210,6 +210,7 @@ header{
 
 .header-logo{
     margin-left: 80px;
+    color: white;
     font-size: 1.2rem;
     line-height: 60px;
     display: inline;
@@ -221,6 +222,10 @@ header{
 
 .today{
     padding-right: 20px;
+}
+
+.today li{
+    color: white;
 }
 
 .today .logout{
@@ -313,7 +318,7 @@ header{
 }
 
 .table-head{
-    background-color: #b7cadc;
+    background-color: #a1bed9;
     border-radius: 2px 2px 0 0;
     height: 44px;
     width: 1200px;
