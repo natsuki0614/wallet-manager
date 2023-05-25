@@ -1,5 +1,6 @@
 # wallet-manager
-**URL https://wallet-manager.net**　※現在はAWSの利用を停止しているためアクセスできません。
+**URL https://wallet-manager.net**
+※現在はAWSの利用を停止しているためアクセスできません。
 ![トップ画面](https://user-images.githubusercontent.com/127094319/231072469-b2f8c525-89b9-4d07-8803-e7e969650760.png)
 
 ## 概要
